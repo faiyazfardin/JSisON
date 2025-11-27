@@ -1,13 +1,20 @@
-let username, age, hobby;
+console.log("Personal Budget Tracker");
+let userName,income,expance,tax,netIncome,remainingBalance,savings;
 
-username = prompt("Enter your name: ");
-age = prompt("Enter your age: ");
-hobby = prompt("Enter your hobby: ");
+userName = prompt("Enter your name: ");
+income = prompt("Income: ");
+expance = prompt("Expances: ");
 
-console.log("User Information:");
-console.log("Name: " + username);
-console.log("Age: " + age);
-console.log("Hobby: " + hobby);
+tax = Number(income) * 0.1;
+netIncome = Number(income) - Number(tax);
+remainingBalance = Number(netIncome) - Number(expance);
+savings = Number(remainingBalance) * 0.2;
 
 
-document.write(username.charAt(3));
+document.write(`Name: ${userName}<br>`);
+document.write(`Income: ${income}<br>`);
+document.write(`Expances: ${expance}<br>`);
+document.write(`Tax: ${tax}<br>`);
+document.write("Net Income: " + netIncome + "$<br/>");
+document.write("Remaining Balance: " + remainingBalance + "$<br/>");
+document.write("Suggested Savings (20% of Remaining Balance): " + savings + "$<br/>");  
